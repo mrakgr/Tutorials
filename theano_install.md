@@ -42,7 +42,7 @@ Do not install libpython or mingw using pip as the Theano instructions say. Ming
 
 3) Now you should be able to type `import theano` inside Python and have it execute without error.
 
-To add GPU support, create `THEANO_FLAGS`, an environment variable with the following values “device=gpu,floatX=float32,nvcc.fastmath=True,lib.cnmem=0.75,warn_float64=warn,allow_gc=False”. The values have to be colon `,` separated, if you use semi-colons `;` (or put them in their own separate entries) it will not work.
+To add GPU support, create `THEANO_FLAGS`, an environment variable with the following values `device=gpu,floatX=float32,nvcc.fastmath=True,lib.cnmem=0.75,warn_float64=warn,allow_gc=False`. The values have to be colon `,` separated, if you use semi-colons `;` (or put them in their own separate entries) it will not work.
 
 To check what all those options do, [see here](http://deeplearning.net/software/theano/library/config.html).
 
