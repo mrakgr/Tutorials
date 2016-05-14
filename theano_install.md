@@ -16,6 +16,8 @@ The VS2015 C++ compiler is not currently compatible with Nvidia compiler.  Cuda 
 
 As Theano calls `nvcc` (Nvidia C++ Cuda compiler) from the command line and `nvcc` then calls `cl` (Microsoft C++ compiler) also from the command line, add `C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin` or the like to `PATH` so `nvcc` can find it.
 
+**UPDATE: Alternatively, skip this part and add `compiler_bindir=C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin` to `THEANO_FLAGS` instead.**
+
 CUDA 7.5 SDK: https://developer.nvidia.com/cuda-downloads
 
 Python Anaconda: https://www.continuum.io/downloads#_windows
@@ -48,7 +50,7 @@ To check what all those options do, [see here](http://deeplearning.net/software/
 
 On my system they are `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\lib\x64` and `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include` respectively.
 
-5) Optionally, you might also want to get OpenBLAS for much better performance on the CPU as well.
+5) Optionally, you might also want to get OpenBLAS for much better performance on the CPU as well. **UPDATE: Actually, Anaconda comes with Intel's MKL so this part is not necessary, but might be useful to know. You might want to make `make` functional on Windows so you can run Linux style makefiles.**
 
 I am going to describe the hard way of installing it first for educational purposes.
 
@@ -64,7 +66,7 @@ To finish the installation, add the following option to `THEANO_FLAGS` - `blas.l
 
 The easier way of installing OpenBLAS by avoiding the build step is to just download the Windows binary in the `0.2.15` folder where you also got the `mingw64_dll.zip` file. But the build step is easy enough if you have a working MingW distro and Linux command line tools from Git. It is essential that you be able to do it. Also by building the library yourself, you get optimizations specific to your CPU.
 
-6) The final part of the Theano installation is to install the `libgpuarray` backend. At the time writing, the new backend has a heap corruption error on Windows, but I will describe how to install it here for when it gets fixed.
+6) The final part of the Theano installation is to install the `libgpuarray` backend, which like OpenBlas is optional. At the time writing, the new backend has a heap corruption error on Windows, but I will describe how to install it here for when it gets fixed.
 
 First, clone it using `git clone https://github.com/Theano/libgpuarray.git`.
 
