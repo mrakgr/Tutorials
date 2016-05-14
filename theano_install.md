@@ -7,17 +7,29 @@ Time of writing this guide: 5/13/2016.
 Prerequisites:
 
 Rapid Environment Editor: http://www.rapidee.com/en/about
+
 For environment variable editing.
+
 Visual Studio 2013:  https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx
+
 The VS2015 C++ compiler is not currently compatible with Nvidia compiler.  Cuda 8.0 SDK which has not been released at the time of writing might be compatible with VS2015, so check if the latest Cuda SDK is VS2015 compatible and get VS2015 instead if it is.
+
 As Theano calls `nvcc` (Nvidia C++ Cuda compiler) from the command line and `nvcc` then calls `cl` (Microsoft C++ compiler) also from the command line, add `C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin` or the like to `PATH` so `nvcc` can find it.
+
 CUDA 7.5 SDK: https://developer.nvidia.com/cuda-downloads
+
 Python Anaconda: https://www.continuum.io/downloads#_windows
+
 2.7 is preferred.
+
 Cmake: https://cmake.org/
+
 Get the installer version. This one is necessary to make the VS solution files for the `libgpuarray` backend.
+
 Git For Windows: https://git-scm.com/download/win
+
 Add the optional Linux tools to path during installation or manually add `C:\Program Files\Git\usr\bin` to PATH assuming you installed Git there.
+
 MingWpy: Install it using `pip install -i https://pypi.anaconda.org/carlkl/simple mingwpy` from the command line after installing Anaconda. Add `C:\Users\UserName\Anaconda2\share\mingwpy\bin` to the system-wide path using the Rapid Environment editor. Add  `C:\UserName\UserName\Anaconda2\share\mingwpy\include` to `CPATH` assuming you installed Anaconda there. Note that it is `CPATH` and not `PATH`. Create the environment variables if they are missing. And of course, change the `UserName` to your own user name.
 
 Do not install libpython or mingw using pip as the Theano instructions say. MingWpy is a later distribution that also works fine.
