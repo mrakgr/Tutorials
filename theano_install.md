@@ -40,19 +40,19 @@ Do not install libpython or mingw using pip as the Theano instructions say. Ming
 
 3) Now you should be able to type `import theano` inside Python and have it execute without error.
 
-To add GPU support, create THEANO_FLAGS an environment variable with the following values “device=gpu,floatX=float32,nvcc.fastmath=True,lib.cnmem=0.75,warn_float64=warn,allow_gc=False”. The values have to be colon separated, if you use semi-colons (or put them in their own separate entries) it will not work.
+To add GPU support, create `THEANO_FLAGS`, an environment variable with the following values “device=gpu,floatX=float32,nvcc.fastmath=True,lib.cnmem=0.75,warn_float64=warn,allow_gc=False”. The values have to be colon `,` separated, if you use semi-colons `;` (or put them in their own separate entries) it will not work.
 
 To check what all those options do, [see here](http://deeplearning.net/software/theano/library/config.html).
 
 4) For much better performance on convolutional nets, sign up for the Nvidia developer program and get [cuDNN](https://developer.nvidia.com/cudnn). After installing it it make sure that `cudnn64_5.dll` if using v5 or a different dll if using another version is in `PATH`. To make Theano use cuDNN, the easiest way is to imitate the Linux installation – copy `cudnn.lib` into the Cuda library directory and `cudnn.h` into the Cuda include directory.
 
-On my system they are “C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\lib\x64” and “C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include” respectively.
+On my system they are `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\lib\x64` and `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include` respectively.
 
 5) Optionally, you might also want to get OpenBLAS for much better performance on the CPU as well.
 
 I am going to describe the hard way of installing it first for educational purposes.
 
-First we need the `make` tool for the Makefiles. Go into your MingWpy bin directory - “C:\Users\UserName\Anaconda2\share\mingwpy\bin” or the like – and find the `mingw32-make.exe` file. Copy it to the same directory and rename the copy to `make.exe`. Now you should be able to run Linux style makefiles on Windows with MingW.
+First we need the `make` tool for the Makefiles. Go into your MingWpy bin directory - `C:\Users\UserName\Anaconda2\share\mingwpy\bin` or the like – and find the `mingw32-make.exe` file. Copy it to the same directory and rename the copy to `make.exe`. Now you should be able to run Linux style makefiles on Windows with MingW.
 
 Get the latest stable OpenBLAS source [from here](https://sourceforge.net/projects/openblas/files). Extract it to something like, “OpenBLAS-2.18-source”. From the command line, just run `make` and it should build automatically. It will take 10m or so to finish.
 
