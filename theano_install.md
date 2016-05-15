@@ -16,7 +16,7 @@ The VS2015 C++ compiler is not currently compatible with Nvidia compiler.  Cuda 
 
 As Theano calls `nvcc` (Nvidia C++ Cuda compiler) from the command line and `nvcc` then calls `cl` (Microsoft C++ compiler) also from the command line, add `C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin` or the like to `PATH` so `nvcc` can find it.
 
-**UPDATE: Alternatively, skip this part and add `compiler_bindir=C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin` to `THEANO_FLAGS` instead.**
+Alternatively, skip this part and add `compiler_bindir=C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin` to `THEANO_FLAGS` instead. Do this in step 3.
 
 CUDA 7.5 SDK: https://developer.nvidia.com/cuda-downloads
 
@@ -50,9 +50,9 @@ To check what all those options do, [see here](http://deeplearning.net/software/
 
 On my system they are `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\lib\x64` and `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include` respectively.
 
-5) Optionally, you might also want to get OpenBLAS for much better performance on the CPU as well. **UPDATE: Actually, Anaconda comes with Intel's MKL so this part is not necessary, but might be useful to know. You might want to make `make` functional on Windows so you can run Linux style makefiles.**
+5) Optionally, you might also want to get OpenBLAS for much better performance on the CPU as well. Actually in the recent versions, Anaconda comes with Intel's MKL so this part is not necessary, but might be useful to know. As many Linux native programs build using GCC, you might want to make `make` functional on Windows so you can run Linux style makefiles with MingW.
 
-I am going to describe the hard way of installing it first for educational purposes.
+I am going to describe the hard way of installing OpenBLAS first for educational purposes.
 
 First we need the `make` tool for the Makefiles. Go into your MingWpy bin directory - `C:\Users\UserName\Anaconda2\share\mingwpy\bin` or the like – and find the `mingw32-make.exe` file. Copy it to the same directory and rename the copy to `make.exe`. Now you should be able to run Linux style makefiles on Windows with MingW.
 
@@ -86,8 +86,12 @@ To activate the new `libgpuarray` backend in Theano, change `device=gpu` to `dev
 
 Extras:
 
-- Note on the `.bashrc` file. When I first tried Theano a year ago, I was positively mystified about what that thing was doing as it looked like some kind of Linux configuration file that I knew Windows would not touch. Now with much more experience, I know that it is in fact a Linux configuration file that Windows will not touch. In Linux such files are used to add variables to the environment, but do nothing on Windows. Do not bother with it. It is highly likely that the Theano documentation is wrong here and Theano itself is not checking the file on Windows.
-
 - It is remarkable how similar Linux and Windows environments for path variables are. They are pretty much identical. And unlike Windows, Linux does not store extra information in the registry as it does not even have it. All it uses are local configuration files. Keeping this bit of knowledge in mind is quite important when it comes to adapting Linux first programs on Windows. Often, one just needs to add the right flag variables to the environment and the location of the binaries to `PATH`.
 
 - If you have multiple MingW or Python distributions, the first one in path will get used. To find out if you have multiple Pythons for example, type `where python` in the command line. Then if changing the select priority is needed, just move the entry upwards in the environment using the Rapid Environment Editor.
+
+- An alternative way of installing and some good discussion can be found on this [Reddit thread](https://www.reddit.com/r/MachineLearning/comments/4jajq2/theano_windows_installation_guide/) in the ML sub. Getting Theano with WinPython and installing Cuda related stuff manually might be a decent alterantive to Anaconda, but the best option is to figure it out yourself. Getting Linux stuff to run on Windows will always run into headaches.
+ 
+- It might be worth a try instead of modifying the `THEANO_FLAGS` environment variable, to create the `.theanorc` variable in the users directory as per instructions in the thread above.
+
+- Git for Windows command line Linux tools are of higher quality than what you might find packaged elsewhere on the net. If you find a recommendation to get the same set of tools under a different name in a random library on the net, just use the ones from Git.
