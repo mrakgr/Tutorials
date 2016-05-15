@@ -16,7 +16,7 @@ The VS2015 C++ compiler is not currently compatible with Nvidia compiler.  Cuda 
 
 As Theano calls `nvcc` (Nvidia C++ Cuda compiler) from the command line and `nvcc` then calls `cl` (Microsoft C++ compiler) also from the command line, add `C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin` or the like to `PATH` so `nvcc` can find it.
 
-Alternatively, skip this part and add `compiler_bindir=C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin` to `THEANO_FLAGS` instead. Do this in step 3.
+Alternatively, skip this part and add `nvcc.compiler_bindir=C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin` to `THEANO_FLAGS` instead. Do this in step 3.
 
 CUDA 7.5 SDK: https://developer.nvidia.com/cuda-downloads
 
