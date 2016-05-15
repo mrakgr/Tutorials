@@ -95,3 +95,5 @@ Extras:
 - It might be worth a try instead of modifying the `THEANO_FLAGS` environment variable, to create the `.theanorc` variable in the users directory as per instructions in the thread above.
 
 - Git for Windows command line Linux tools are of higher quality than what you might find packaged elsewhere on the net. If you find a recommendation to get the same set of tools under a different name in a random library on the net, just use the ones from Git.
+ 
+- Here is how the installation looks like on [Linux](https://github.com/saiprashanths/dl-setup).
