@@ -90,7 +90,7 @@ Extras:
 
 - If you have multiple MingW or Python distributions, the first one in path will get used. To find out if you have multiple Pythons for example, type `where python` in the command line. Then if changing the select priority is needed, just move the entry upwards in the environment using the Rapid Environment Editor.
 
-- An alternative way of installing and some good discussion can be found on this [Reddit thread](https://www.reddit.com/r/MachineLearning/comments/4jajq2/theano_windows_installation_guide/) in the ML sub. Getting Theano with WinPython and installing Cuda related stuff manually might be a decent alterantive to Anaconda, but the best option is to figure it out yourself. Getting Linux stuff to run on Windows will always run into headaches.
+- An alternative way of installing and some good discussion can be found on this [Reddit thread](https://www.reddit.com/r/MachineLearning/comments/4jajq2/theano_windows_installation_guide/) in the ML sub. Getting Theano with WinPython and installing Cuda related stuff manually might be a decent alterantive to Anaconda, but the best option is to figure it out yourself. Getting Linux stuff to run on Windows will always run into headaches otherwise.
  
 - It might be worth a try instead of modifying the `THEANO_FLAGS` environment variable, to create the `.theanorc` variable in the users directory as per instructions in the thread above.
 
