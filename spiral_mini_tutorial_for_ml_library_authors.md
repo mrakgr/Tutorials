@@ -381,3 +381,5 @@ If you have any questions, leave them here or open an issue on the Spiral repos.
 If you are interested you can grab it from VS Code marketplace. Just make sure to install the .NET 8 SDK first. The docs are on the repo.
 
 On my own end, I am interested in what you'd like to see. More than Spiral, if you want somebody with PL skills and are interested in sending me paid work, don't hesitate to get in touch.
+
+Time of writing this guide: 9/13/2024.
