@@ -1,3 +1,17 @@
+<!-- TOC -->
+
+- [Intro](#intro)
+- [Printing in Spiral](#printing-in-spiral)
+- [Tensors in Spiral](#tensors-in-spiral)
+- [Spiral's staging capabilities](#spirals-staging-capabilities)
+- [Partially applied functions can be passed through language boundaries in Spiral](#partially-applied-functions-can-be-passed-through-language-boundaries-in-spiral)
+- [A brief look at Spiral's recursive unions](#a-brief-look-at-spirals-recursive-unions)
+- [Maps on the GPU in Spiral](#maps-on-the-gpu-in-spiral)
+- [The softmax is easy to implement in Spiral](#the-softmax-is-easy-to-implement-in-spiral)
+- [Outro](#outro)
+
+<!-- /TOC -->
+
 # Intro
 
 Not a bug or a question. Since you're working on an ML library, I just wanted to showcase some of my own work.
