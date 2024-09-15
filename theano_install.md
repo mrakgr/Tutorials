@@ -1,4 +1,4 @@
-#Theano Windows Install Guide.
+# Theano Windows Install Guide.
 
 A year ago when I was starting out with ML, I tried installing Theano for the first time and did not have much luck. Now that I have some experience with Linux, things went much more smoothly. The trouble with Theano's installation guide is that it is fairly massive, overwhelming and even outdated – the exact opposite of a good guide. Actually, I had more luck ignoring the specific instructions and following my intuition.
 
